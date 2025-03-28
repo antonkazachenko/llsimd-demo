@@ -1,4 +1,4 @@
-.header-block {
+.headerBlock {
     height: 20%;
     display: flex;
     justify-content: center;
@@ -8,11 +8,33 @@
 }
 
 .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
     width: 620px;
     padding: 15px 40px;
-    align-items: center;
     gap: 30px;
     border-radius: 25px;
     border: 3px solid #FFFFFF;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
+}
+
+.logoText {
+    color: #1E1E1E;
+    text-align: center;
+    font-family: "Clash Display", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+}
+
+.subText {
+    color: #1E1E1E;
+    font-family: Manrope, sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
 }
