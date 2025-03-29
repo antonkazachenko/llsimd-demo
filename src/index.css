@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
 @font-face {
   font-family: 'Clash Display';
   src: url('./assets/fonts/ClashDisplay-Variable.woff2') format('woff2');

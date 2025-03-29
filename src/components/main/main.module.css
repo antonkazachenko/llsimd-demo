@@ -1,0 +1,26 @@
+.main {
+    display: flex;
+    flex: 1;
+    gap: 3.4%;
+    margin-bottom: 4.88%;
+}
+
+.inputBlock {
+    display: flex;
+    flex: 1;
+}
+
+.outputBlock {
+    display: flex;
+    flex-direction: column;
+    gap: 3.4%;
+    flex: 1;
+}
+
+.firstOutput {
+    flex: 1;
+}
+
+.secondOutput {
+    flex: 1;
+}
