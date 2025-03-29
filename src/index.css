@@ -28,3 +28,10 @@ html, body, #root {
   font-weight: 100 900;
   font-display: swap;
 }
+
+@font-face {
+  font-family: "Montserrat";
+  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
