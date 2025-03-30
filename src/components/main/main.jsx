@@ -7,18 +7,25 @@ function Main() {
     <div className={styles.main}>
       <div className={styles.codeBlock}>
         <div className={styles.inputBlock}>
+          <div className={styles.codeTitle}>Code Input</div>
           <CodeInput />
         </div>
         <div className={styles.outputBlock}>
-          <div className={styles.firstOutput}><CodeInput /></div>
-          <div className={styles.secondOutput}><CodeInput /></div>
+          <div className={styles.firstOutput}>
+            <div className={styles.codeTitle}>LLVM IR Viewer</div>
+            <CodeInput />
+          </div>
+          <div className={styles.secondOutput}>
+            <div className={styles.codeTitle}>Transformed Output</div>
+            <CodeInput />
+          </div>
         </div>
       </div>
-      <div className={styles.btnStyle}>
+      <button type="button" className={styles.btnStyle}>
         <div className={styles.btnText}>
           Submit Code
         </div>
-      </div>
+      </button>
     </div>
   );
 }

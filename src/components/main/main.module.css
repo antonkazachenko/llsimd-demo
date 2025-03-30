@@ -14,6 +14,7 @@
 }
 
 .btnStyle {
+    border: 0;
     padding: 15px 20px;
     gap: 10px;
     border-radius: 50px;
@@ -44,6 +45,19 @@
 }
 
 .inputBlock, .firstOutput, .secondOutput {
-    flex: 1;
+    flex: 1 1;
+    display: flex;
+    gap: 10px;
     min-height: 0;
+    flex-direction: column;
+}
+
+.codeTitle {
+    color: #1E1E1E;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Montserrat, sans-serif;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%; /* 24px */
 }
