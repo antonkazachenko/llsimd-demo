@@ -15,9 +15,9 @@ function Main() {
         </div>
       </div>
       <div className={styles.btnStyle}>
-        <span className={styles.btnText}>
+        <div className={styles.btnText}>
           Submit Code
-        </span>
+        </div>
       </div>
     </div>
   );
