@@ -1,8 +1,18 @@
-.inputStyle {
+.outputStyle {
+    box-sizing: border-box;
     border-radius: 10px;
+    width: 100%;
+    height: 100%;
     border: 3px solid #F7F7F7;
     background: #1E1E1E;
+    font-family: Montserrat, sans-serif;
     box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.25);
     padding: 15px 20px;
-    width: 100%;
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+}
+
+.error {
+    border-color: #FF0303;
 }

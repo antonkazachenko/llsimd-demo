@@ -37,3 +37,18 @@
     font-weight: 500;
     line-height: normal;
 }
+
+.logoText,
+.subText {
+    transition: all 1s ease-in-out;
+    cursor: pointer;
+}
+
+.logoText:hover,
+.subText:hover {
+    cursor: pointer;
+    background: radial-gradient(135.48% 89.28% at 50% 50%, #ED8A8A 0%, #FF0303 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 5px rgba(255, 3, 3, 0.25);
+}

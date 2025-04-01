@@ -1,33 +1,33 @@
 import React from 'react';
 import Editor from '@monaco-editor/react';
+import PropTypes from 'prop-types';
+import styles from './code-input.module.css';
 
-function CodeInput() {
+function CodeInput({ code, setCode, error }) {
+  const handleEditorChange = (value) => {
+    setCode(value);
+  };
+
   return (
-    <div
-      style={{
-        boxSizing: 'border-box',
-        borderRadius: '10px',
-        width: '100%',
-        height: '100%',
-        border: '3px solid #F7F7F7',
-        background: '#1E1E1E',
-        fontFamily: 'Montserrat, sans-serif',
-        boxShadow: '0px 0px 10px 0px rgba(0, 0, 0, 0.25)',
-        padding: '15px 20px',
-        overflow: 'hidden',
-      }}
-    >
+    <div className={`${styles.inputStyle} ${error ? styles.error : ''}`}>
       <Editor
         defaultLanguage="cpp"
-        automaticLayout={false}
+        automaticLayout
         height="100%"
         width="100%"
         theme="vs-dark"
-        value="test"
+        value={code}
+        onChange={handleEditorChange}
         options={{ selectOnLineNumbers: true }}
       />
     </div>
   );
 }
+
+CodeInput.propTypes = {
+  code: PropTypes.string.isRequired,
+  setCode: PropTypes.func.isRequired,
+  error: PropTypes.bool.isRequired,
+};
 
 export default CodeInput;
