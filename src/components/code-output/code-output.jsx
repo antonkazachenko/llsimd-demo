@@ -2,8 +2,9 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Editor from '@monaco-editor/react';
 import styles from './code-output.module.css';
+import { ReactComponent as Spinner } from '../../assets/images/spinner.svg';
 
-function CodeOutput({ value, error }) {
+function CodeOutput({ value, error, loading }) {
   useEffect(() => {
     const style = document.createElement('style');
     style.innerHTML = `
@@ -18,6 +19,11 @@ function CodeOutput({ value, error }) {
 
   return (
     <div className={`${styles.outputStyle} ${error ? styles.error : ''}`}>
+      {loading && (
+        <div className={styles.spinner}>
+          <Spinner />
+        </div>
+      )}
       <Editor
         defaultLanguage="cpp"
         automaticLayout
@@ -34,6 +40,7 @@ function CodeOutput({ value, error }) {
 CodeOutput.propTypes = {
   value: PropTypes.string.isRequired,
   error: PropTypes.bool.isRequired,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default CodeOutput;

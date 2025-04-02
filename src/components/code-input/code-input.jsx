@@ -3,7 +3,9 @@ import Editor from '@monaco-editor/react';
 import PropTypes from 'prop-types';
 import styles from './code-input.module.css';
 
-function CodeInput({ code, setCode, error }) {
+function CodeInput({
+  code, setCode, error,
+}) {
   const handleEditorChange = (value) => {
     setCode(value);
   };

@@ -7,9 +7,12 @@ function Main() {
   const [code, setCode] = useState('');
   const [llvmIR, setLLVMIR] = useState('');
   const [errorState, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [transformedOutput, setTransformedOutput] = useState('');
 
   const handleSubmit = async () => {
+    setLoading(true);
+    setError(false);
     try {
       const response = await fetch('http://localhost:5000/submit', {
         method: 'POST',
@@ -21,6 +24,8 @@ function Main() {
       setTransformedOutput(data.transformedOutput);
     } catch (error) {
       setError(true);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -34,11 +39,11 @@ function Main() {
         <div className={styles.outputBlock}>
           <div className={styles.firstOutput}>
             <div className={styles.codeTitle}>LLVM IR Viewer</div>
-            <CodeOutput value={llvmIR} error={errorState} />
+            <CodeOutput value={llvmIR} error={errorState} loading={loading} />
           </div>
           <div className={styles.secondOutput}>
             <div className={styles.codeTitle}>Transformed Output</div>
-            <CodeOutput value={transformedOutput} error={errorState} />
+            <CodeOutput value={transformedOutput} error={errorState} loading={loading} />
           </div>
         </div>
       </div>
