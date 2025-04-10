@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+# Demo Project for the LLVM Transformation Pass
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a complete end-to-end demonstration that integrates a modern React front end with a Django back end to process code using an LLVM Transformation Pass. The system efficiently transforms submitted code and displays both the original and optimized outputs, showcasing performance improvements and the seamless integration of advanced compiler techniques with user-friendly interfaces.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+### Frontend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Navigate to the "frontend" directory and install dependencies:
+```bash
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Then, start the development server:
+```bash
+npm start
+```
 
-### `npm test`
+### Backend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Navigate to the "backend" directory and set up the environment:
 
-### `npm run build`
+```bash
+python3 -m venv env source env/bin/activate 
+pip install -r requirements.txt 
+python manage.py makemigrations 
+python manage.py migrate 
+python manage.py runserver
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Dockerized Setup
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can also run the entire project using Docker. A Dockerfile is provided in the project root.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To build the Docker image:
+```bash
+sudo docker build -t demo-project .
+```
 
-### `npm run eject`
+Then, run the Docker container:
+```bash
+sudo docker run --rm -p 8000:8000 demo-project
+```
+## Usage
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+When both the React and Django servers are running, users enter code in C the React interface. This code is sent as a JSON payload to the Django back end, where it undergoes processing via the LLVM Transformation Pass. The back end returns both the original and the transformed output, which the front end displays side by side.
