@@ -19,19 +19,19 @@ html, body, #root {
 
 @font-face {
   font-family: 'Clash Display';
-  src: url('./assets/fonts/ClashDisplay-Variable.woff2') format('woff2');
+  src: url('assets/fonts/ClashDisplay-Variable.woff2') format('woff2');
 }
 
 @font-face {
   font-family: "Manrope";
-  src: url('./assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
+  src: url('assets/fonts/Manrope-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
 
 @font-face {
   font-family: "Montserrat";
-  src: url('./assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
+  src: url('assets/fonts/Montserrat-VariableFont_wght.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
